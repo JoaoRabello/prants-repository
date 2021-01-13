@@ -10,6 +10,9 @@ public class MenuRenderer : MonoBehaviour
 
     [SerializeField] private TMP_InputField _createRoomNameInputField;
     
+    [SerializeField] private GameObject _roomListItemPrefab;
+    [SerializeField] private Transform _roomListContainer;
+    
     [SerializeField] private GameObject _playerListItemPrefab;
     [SerializeField] private Transform _playerListContainer;
 
@@ -17,6 +20,7 @@ public class MenuRenderer : MonoBehaviour
     [SerializeField] private GameObject _startGameButton;
     
     private List<PlayerListItem> _playerList = new List<PlayerListItem>();
+    private List<RoomListItem> _roomList = new List<RoomListItem>();
     
     private void Awake()
     {
@@ -29,15 +33,15 @@ public class MenuRenderer : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     public string GetRoomNameFromInputField()
     {
         return _createRoomNameInputField.text;
     }
     
-    public void SetRoomName()
+    public void SetRoomName(string roomName)
     {
-        _roomNameLabel.text = GetRoomNameFromInputField();
+        _roomNameLabel.text = roomName;
     }
 
     public void SetStartGameButton(bool value)
@@ -58,6 +62,23 @@ public class MenuRenderer : MonoBehaviour
             
             newPlayer.SetPlayerName(player.NickName);
             _playerList.Add(newPlayer);
+        }
+    }
+    
+    public void UpdateRoomList(List<RoomInfo> roomInfos)
+    {
+        foreach (Transform transformToCheck in _roomListContainer)
+        {
+            Destroy(transformToCheck.gameObject);
+        }
+        
+        foreach (var room in roomInfos)
+        {
+            var newRoom = Instantiate(_roomListItemPrefab, _roomListContainer).GetComponent<RoomListItem>();
+            
+            newRoom.SetRoomName(room.Name);
+            newRoom.SetPlayerAmount(room.PlayerCount, room.MaxPlayers);
+            _roomList.Add(newRoom);
         }
     }
 }

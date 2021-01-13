@@ -31,17 +31,17 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
     }
 
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        MenuRenderer.Instance.SetStartGameButton(PhotonNetwork.IsMasterClient);
+    }
+    
     public override void OnJoinedLobby()
     {
-        PhotonNetwork.NickName = "Jogador " + Random.Range(0, 1000).ToString("0000");
+        PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
         MenuManager.Instance.OpenWindow("mainMenu");
     }
 
-    public void OpenRoomCreationMenu()
-    {
-        MenuManager.Instance.OpenWindow("createRoom");
-    }
-    
     public void CreateRoom()
     {
         var inputFieldText = MenuRenderer.Instance.GetRoomNameFromInputField();
@@ -49,11 +49,25 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
         if (string.IsNullOrEmpty(inputFieldText)) return;
         
         PhotonNetwork.CreateRoom(inputFieldText);
+        
+        MenuManager.Instance.OpenWindow("loading");
+    }
+
+    public override void OnCreatedRoom()
+    {
+        PhotonNetwork.CurrentRoom.MaxPlayers = 3;
+    }
+
+    public void JoinRoom(string roomName)
+    {
+        PhotonNetwork.JoinRoom(roomName);
+        
+        MenuManager.Instance.OpenWindow("loading");
     }
     
     public override void OnJoinedRoom()
     {
-        MenuRenderer.Instance.SetRoomName();
+        MenuRenderer.Instance.SetRoomName(PhotonNetwork.CurrentRoom.Name);
 
         var playerList = PhotonNetwork.PlayerList;
         MenuRenderer.Instance.UpdatePlayerList(playerList);
@@ -61,9 +75,21 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
         MenuRenderer.Instance.SetStartGameButton(PhotonNetwork.IsMasterClient);
         MenuManager.Instance.OpenWindow("room");
     }
-    
-    public override void OnMasterClientSwitched(Player newMasterClient)
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        MenuRenderer.Instance.SetStartGameButton(PhotonNetwork.IsMasterClient);
+        var playerList = PhotonNetwork.PlayerList;
+        MenuRenderer.Instance.UpdatePlayerList(playerList);
+    }
+    
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        var playerList = PhotonNetwork.PlayerList;
+        MenuRenderer.Instance.UpdatePlayerList(playerList);
+    }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        MenuRenderer.Instance.UpdateRoomList(roomList);
     }
 }

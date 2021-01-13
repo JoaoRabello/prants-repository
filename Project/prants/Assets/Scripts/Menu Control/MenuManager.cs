@@ -43,4 +43,19 @@ public class MenuManager : MonoBehaviour
             w.TurnOn(!value);
         }
     }
+    
+    public void OpenRoomCreationMenu()
+    {
+        Instance.OpenWindow("createRoom");
+    }
+
+    public void OpenRoomListMenu()
+    {
+        Instance.OpenWindow("findRoom");
+    }
+
+    public void BackToMainMenu()
+    {
+        Instance.OpenWindow("mainMenu");
+    }
 }
