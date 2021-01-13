@@ -33,7 +33,7 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         PhotonNetwork.NickName = "Jogador " + Random.Range(0, 1000).ToString("0000");
-        // MenuManager.Instance.OpenMenu(1);
+        MenuManager.Instance.OpenWindow("mainMenu");
     }
     
     // public void CreateRoom()
