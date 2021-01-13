@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class NetworkLauncher : MonoBehaviourPunCallbacks
@@ -35,12 +36,34 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = "Jogador " + Random.Range(0, 1000).ToString("0000");
         MenuManager.Instance.OpenWindow("mainMenu");
     }
+
+    public void OpenRoomCreationMenu()
+    {
+        MenuManager.Instance.OpenWindow("createRoom");
+    }
     
-    // public void CreateRoom()
-    // {
-    //     if (string.IsNullOrEmpty(_createRoomNameInputField.text)) return;
-    //     
-    //     PhotonNetwork.CreateRoom(_createRoomNameInputField.text);
-    //     MenuManager.Instance.OpenMenu(0);
-    // }
+    public void CreateRoom()
+    {
+        var inputFieldText = MenuRenderer.Instance.GetRoomNameFromInputField();
+        
+        if (string.IsNullOrEmpty(inputFieldText)) return;
+        
+        PhotonNetwork.CreateRoom(inputFieldText);
+    }
+    
+    public override void OnJoinedRoom()
+    {
+        MenuRenderer.Instance.SetRoomName();
+
+        var playerList = PhotonNetwork.PlayerList;
+        MenuRenderer.Instance.UpdatePlayerList(playerList);
+        
+        MenuRenderer.Instance.SetStartGameButton(PhotonNetwork.IsMasterClient);
+        MenuManager.Instance.OpenWindow("room");
+    }
+    
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        MenuRenderer.Instance.SetStartGameButton(PhotonNetwork.IsMasterClient);
+    }
 }
