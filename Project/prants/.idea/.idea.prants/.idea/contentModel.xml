@@ -875,6 +875,7 @@
             </e>
           </e>
           <e p="Menu Control" t="Include">
+            <e p="CharacterListItem.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
             <e p="MenuRenderer.cs" t="Include" />
             <e p="MenuWindow.cs" t="Include" />
