@@ -15,11 +15,11 @@ D:/Users/Rabel/Github Repos/prants-repository/Project/prants
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-50275
+59553
 Successfully changed project path to: D:/Users/Rabel/Github Repos/prants-repository/Project/prants
 D:/Users/Rabel/Github Repos/prants-repository/Project/prants
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 146.27 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 94.88 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity Versions/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
@@ -35,140 +35,19 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity Versions/2020.2.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity Versions/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity Versions/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56876
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56120
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity Versions/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002132 seconds.
+Registered in 0.002356 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 87.54 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 88.88 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.113 seconds
+- Completed reload, in  1.176 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003344 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 96.98 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-HDRP Internally changed the storage of Cube Cookie to use Octahedral Projection inside the 2D Cookie Atlas. It is recommended that you increase the size of the 2D Cookie Atlas if your cookies no longer fit.
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset/<>c:<.cctor>b__110_12 (UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset) (at Library/PackageCache/com.unity.render-pipelines.high-definition@10.2.2/Runtime/RenderPipeline/HDRenderPipelineAsset.Migration.cs:126)
-UnityEngine.Rendering.HighDefinition.MigrationStep`2<UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset/Version, UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset>:Migrate (UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset) (at Library/PackageCache/com.unity.render-pipelines.high-definition@10.2.2/Runtime/Core/Migration/MigrationStep.cs:52)
-UnityEngine.Rendering.HighDefinition.MigrationDescription`2<UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset/Version, UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset>:Migrate (UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset) (at Library/PackageCache/com.unity.render-pipelines.high-definition@10.2.2/Runtime/Core/Migration/MigrationDescription.cs:101)
-UnityEngine.Rendering.HighDefinition.HDRenderPipelineAsset:OnEnable () (at Library/PackageCache/com.unity.render-pipelines.high-definition@10.2.2/Runtime/RenderPipeline/HDRenderPipelineAsset.Migration.cs:146)
-UnityEngine.Rendering.GraphicsSettings:get_currentRenderPipeline ()
-UnityEditor.CustomEditorAttributes:FindCustomEditorTypeByType (System.Type,bool)
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:591)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Library/PackageCache/com.unity.render-pipelines.high-definition@10.2.2/Runtime/RenderPipeline/HDRenderPipelineAsset.Migration.cs Line: 126)
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.428 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 1.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3889 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 201.1 MB.
-System memory in use after: 201.2 MB.
-
-Unloading 138 unused Assets to reduce memory usage. Loaded Objects now: 4325.
-Total: 7.547200 ms (FindLiveObjects: 0.627900 ms CreateObjectMapping: 0.428300 ms MarkObjects: 5.938600 ms  DeleteObjects: 0.549800 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/New Terrain.asset
-  artifactKey: Guid(4607edcddd9d3884c9a967d89652caa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain.asset using Guid(4607edcddd9d3884c9a967d89652caa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5293d43754f6044eda7484b3bc28a3b1') in 0.075446 seconds
-  Import took 0.088008 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Assets/Scripts/Misc/SimpleCameraController.cs
-  artifactKey: Guid(e8a636f62116c0a40bbfefdf876d4608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Misc/SimpleCameraController.cs using Guid(e8a636f62116c0a40bbfefdf876d4608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f33644f5ce7c40934e7f3366083cb031') in 0.015390 seconds
-  Import took 0.024919 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.242203 seconds.
-  path: Assets/Scripts/Connection
-  artifactKey: Guid(2cdcb056e52fdcb4e9837f5e87bc539d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Connection using Guid(2cdcb056e52fdcb4e9837f5e87bc539d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ab59877873777c40b3cd3cfe85e0cd9') in 0.006719 seconds
-  Import took 0.013529 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006014 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-CreateSerializedAsset is not supported while importing out-of-process
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-Photon.Compression.Internal.TypeCatalogue:EnsureExists () (at Assets/Photon/PhotonUtilities/PackObject/CodeGen/TypeCatalogue.cs:210)
-Photon.Compression.Internal.TypeCatalogue:Initialize () (at Assets/Photon/PhotonUtilities/PackObject/CodeGen/TypeCatalogue.cs:56)
-
-[Assets/Photon/PhotonUtilities/PackObject/CodeGen/TypeCatalogue.cs line 210]
-
-UnityException: Creating asset at path Assets/Photon/PhotonUtilities\PackObject\CodeGen\Editor\Resources\TypeCatalogue.asset failed.
-  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
-  at Photon.Compression.Internal.TypeCatalogue.EnsureExists () [0x0005e] in D:\Users\Rabel\Github Repos\prants-repository\Project\prants\Assets\Photon\PhotonUtilities\PackObject\CodeGen\TypeCatalogue.cs:210 
-  at Photon.Compression.Internal.TypeCatalogue.Initialize () [0x00005] in D:\Users\Rabel\Github Repos\prants-repository\Project\prants\Assets\Photon\PhotonUtilities\PackObject\CodeGen\TypeCatalogue.cs:56 
-
-(Filename: Assets/Photon/PhotonUtilities/PackObject/CodeGen/TypeCatalogue.cs Line: 210)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.611 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.93 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4300 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 222.9 MB.
-System memory in use after: 221.1 MB.
-
-Unloading 1593 unused Assets to reduce memory usage. Loaded Objects now: 4810.
-Total: 11.090500 ms (FindLiveObjects: 0.945700 ms CreateObjectMapping: 0.333300 ms MarkObjects: 7.243300 ms  DeleteObjects: 2.565100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 629.199041 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset
-  artifactKey: Guid(c807371db0da3634e94602e8e9c5195d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset using Guid(c807371db0da3634e94602e8e9c5195d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c025a3c28d8e0728d592cfbaa631e37f') in 0.015409 seconds
-  Import took 0.025578 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.121147 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset
-  artifactKey: Guid(c807371db0da3634e94602e8e9c5195d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset using Guid(c807371db0da3634e94602e8e9c5195d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a8b3530642e34d034d0b908b25ea72a') in 0.002187 seconds
-  Import took 0.008710 seconds .
-
+Registered in 0.004775 seconds.
