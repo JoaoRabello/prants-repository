@@ -1,2 +1,5 @@
 /ProtocolInstance.json
 *.log
+/ArtifactDB
+/ShaderCache.db
+/SourceAssetDB
