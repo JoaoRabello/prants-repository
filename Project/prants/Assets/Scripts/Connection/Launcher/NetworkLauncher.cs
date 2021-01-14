@@ -7,6 +7,8 @@ using UnityEngine;
 public class NetworkLauncher : MonoBehaviourPunCallbacks
 {
     public static NetworkLauncher Instance;
+
+    [SerializeField] private int _minimalPlayerCountToStart;
     
     private void Awake()
     {
@@ -33,7 +35,7 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
 
     public override void OnMasterClientSwitched(Player newMasterClient)
     {
-        MenuRenderer.Instance.SetStartGameButton(PhotonNetwork.IsMasterClient);
+        CheckIfMinimumPlayersInRoom();
     }
     
     public override void OnJoinedLobby()
@@ -72,7 +74,8 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
         var playerList = PhotonNetwork.PlayerList;
         MenuRenderer.Instance.UpdatePlayerList(playerList);
         
-        MenuRenderer.Instance.SetStartGameButton(PhotonNetwork.IsMasterClient);
+        CheckIfMinimumPlayersInRoom();
+        
         MenuManager.Instance.OpenWindow("room");
     }
 
@@ -80,6 +83,8 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
     {
         var playerList = PhotonNetwork.PlayerList;
         MenuRenderer.Instance.UpdatePlayerList(playerList);
+        
+        CheckIfMinimumPlayersInRoom();
     }
     
     public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -91,5 +96,19 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         MenuRenderer.Instance.UpdateRoomList(roomList);
+    }
+
+    private void CheckIfMinimumPlayersInRoom()
+    {
+        if(PhotonNetwork.CurrentRoom.PlayerCount >= _minimalPlayerCountToStart)
+            MenuRenderer.Instance.SetStartGameButton(PhotonNetwork.IsMasterClient);
+    }
+    
+    public void StartGame()
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount < 2)
+            return;
+        
+        PhotonNetwork.LoadLevel(1);
     }
 }
