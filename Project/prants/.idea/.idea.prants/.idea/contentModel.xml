@@ -869,13 +869,26 @@
             </e>
           </e>
           <e p="Gameplay" t="Include">
+            <e p="Enemies" t="Include">
+              <e p="Enemy.cs" t="Include" />
+              <e p="Walker.cs" t="Include" />
+            </e>
             <e p="Player" t="Include">
               <e p="MouseLook.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
             </e>
+            <e p="Systems" t="Include">
+              <e p="WaveInfo.cs" t="Include" />
+              <e p="WaveManager.cs" t="Include" />
+            </e>
           </e>
           <e p="Menu Control" t="Include">
-            <e p="CharacterListItem.cs" t="Include" />
+            <e p="Character" t="Include">
+              <e p="CharacterInfo.cs" t="Include" />
+              <e p="CharacterListItem.cs" t="Include" />
+              <e p="CharacterSelectionManager.cs" t="Include" />
+              <e p="CurrentCharacter.cs" t="Include" />
+            </e>
             <e p="MenuManager.cs" t="Include" />
             <e p="MenuRenderer.cs" t="Include" />
             <e p="MenuWindow.cs" t="Include" />

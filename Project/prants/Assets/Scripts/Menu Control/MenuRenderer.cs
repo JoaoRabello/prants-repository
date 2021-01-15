@@ -10,6 +10,10 @@ public class MenuRenderer : MonoBehaviour
 
     [SerializeField] private TMP_InputField _createRoomNameInputField;
     
+    [SerializeField] private TMP_Text _characterNameLabel;
+    [SerializeField] private TMP_Text _characterClassLabel;
+    [SerializeField] private TMP_Text _characterDetailsLabel;
+    
     [SerializeField] private GameObject _roomListItemPrefab;
     [SerializeField] private Transform _roomListContainer;
     
@@ -80,5 +84,12 @@ public class MenuRenderer : MonoBehaviour
             newRoom.SetPlayerAmount(room.PlayerCount, room.MaxPlayers);
             _roomList.Add(newRoom);
         }
+    }
+
+    public void RenderCharacterInfo(CharacterInfo info)
+    {
+        _characterNameLabel.text = info.Name;
+        _characterDetailsLabel.text = info.Details;
+        _characterClassLabel.text = info.Class;
     }
 }
