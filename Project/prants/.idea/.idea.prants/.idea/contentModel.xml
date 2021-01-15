@@ -883,7 +883,12 @@
             </e>
           </e>
           <e p="Menu Control" t="Include">
-            <e p="CharacterListItem.cs" t="Include" />
+            <e p="Character" t="Include">
+              <e p="CharacterInfo.cs" t="Include" />
+              <e p="CharacterListItem.cs" t="Include" />
+              <e p="CharacterSelectionManager.cs" t="Include" />
+              <e p="CurrentCharacter.cs" t="Include" />
+            </e>
             <e p="MenuManager.cs" t="Include" />
             <e p="MenuRenderer.cs" t="Include" />
             <e p="MenuWindow.cs" t="Include" />

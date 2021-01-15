@@ -49,6 +49,11 @@ public class MenuManager : MonoBehaviour
         Instance.OpenWindow("createRoom");
     }
 
+    public void OpenCharacterSelectionMenu()
+    {
+        Instance.OpenWindow("characterMenu");
+    }
+
     public void OpenRoomListMenu()
     {
         Instance.OpenWindow("findRoom");
