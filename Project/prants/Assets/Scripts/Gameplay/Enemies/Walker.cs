@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Walker : MonoBehaviour
+public class Walker : Enemy
 {
-    [SerializeField] private GameObject _target;
     [SerializeField] private NavMeshAgent _navMeshAgent;
 
     void Update()

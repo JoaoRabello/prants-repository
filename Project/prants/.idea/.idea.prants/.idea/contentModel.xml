@@ -877,6 +877,10 @@
               <e p="MouseLook.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
             </e>
+            <e p="Systems" t="Include">
+              <e p="WaveInfo.cs" t="Include" />
+              <e p="WaveManager.cs" t="Include" />
+            </e>
           </e>
           <e p="Menu Control" t="Include">
             <e p="CharacterListItem.cs" t="Include" />
